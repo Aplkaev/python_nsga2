@@ -63,6 +63,7 @@ def fast_non_dominated_sort(values1):
 
 #Function to calculate crowding distance
 def crowding_distance(values1, front):
+    print(values1, front)
     distance = [0 for i in range(0,len(front))]
     sorted1 = sort_by_values(front, values1[:])
     # sorted2 = sort_by_values(front, values2[:])
@@ -112,7 +113,7 @@ while(gen_no<max_gen):
     crowding_distance_values=[]
     for i in range(0,len(non_dominated_sorted_solution)):
         crowding_distance_values.append(crowding_distance(function1_values[:],non_dominated_sorted_solution[i][:]))
-
+    break
     solution_x2 = solution_x[:]
     solution_y2 = solution_y[:]
     #Generating offsprings
